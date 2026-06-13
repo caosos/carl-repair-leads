@@ -1,4 +1,4 @@
-import { Bell, BriefcaseBusiness, CheckCircle2, CircleDollarSign, Clock3, HardHat, MapPin, MoreHorizontal, Search, Users } from "lucide-react";
+import { Bell, BriefcaseBusiness, CheckCircle2, CircleDollarSign, ClipboardCheck, Hammer, HardHat, MapPin, MoreHorizontal, PaintRoller, Search, UserPlus, Users } from "lucide-react";
 
 const leads = [
   { id: "CARL-1042", name: "Sarah M.", job: "Ceiling drywall patch", location: "Conway", time: "12 min ago", status: "New", priority: true },
@@ -18,11 +18,14 @@ export default function AdminPage() {
       <div className="admin-main">
         <header className="admin-header"><div><h1>Good morning, Michael.</h1><p>Here’s what’s happening with CARL today.</p></div><button><Bell /></button></header>
         <div className="admin-content">
-          <div className="stat-grid">
-            <div><span className="stat-icon orange"><BriefcaseBusiness /></span><p>New leads today<strong>7</strong><small>↑ 3 from yesterday</small></p></div>
-            <div><span className="stat-icon blue"><Clock3 /></span><p>Needs follow-up<strong>4</strong><small>2 over one hour old</small></p></div>
-            <div><span className="stat-icon green"><CheckCircle2 /></span><p>Matched this week<strong>18</strong><small>72% match rate</small></p></div>
-            <div><span className="stat-icon gold"><HardHat /></span><p>Available workers<strong>12</strong><small>5 available today</small></p></div>
+          <div className="stat-grid admin-category-grid">
+            <div><span className="stat-icon orange"><BriefcaseBusiness /></span><p>New Leads<strong>7</strong><small>3 added today</small></p></div>
+            <div><span className="stat-icon blue"><PaintRoller /></span><p>Drywall Leads<strong>9</strong><small>4 need follow-up</small></p></div>
+            <div><span className="stat-icon gold"><Hammer /></span><p>Labor Help Requests<strong>5</strong><small>2 needed today</small></p></div>
+            <div><span className="stat-icon green"><Users /></span><p>Worker Signups<strong>12</strong><small>5 available today</small></p></div>
+            <div><span className="stat-icon blue"><UserPlus /></span><p>Contractor Signups<strong>8</strong><small>2 new this week</small></p></div>
+            <div><span className="stat-icon gold"><ClipboardCheck /></span><p>Assigned Jobs<strong>18</strong><small>6 in progress</small></p></div>
+            <div><span className="stat-icon green"><CheckCircle2 /></span><p>Completed Jobs<strong>31</strong><small>8 this week</small></p></div>
           </div>
           <div className="admin-panel">
             <div className="panel-header"><div><h2>Recent repair leads</h2><p>Newest requests across Central Arkansas</p></div><div className="search-box"><Search /><input placeholder="Search leads..." /></div></div>
