@@ -120,3 +120,13 @@ export function PhotoUpload() {
     </label>
   );
 }
+
+
+export function LeadSourceField() {
+  return (
+    <SelectField label="How did you hear about CARL?" name="leadSource">
+      <option>Facebook</option><option>Flyer / QR code</option><option>Yard sign</option>
+      <option>Google</option><option>Referral</option><option>Other</option>
+    </SelectField>
+  );
+}

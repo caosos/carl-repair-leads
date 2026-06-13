@@ -1,5 +1,5 @@
 import { BadgeCheck, Handshake, MessageSquareText } from "lucide-react";
-import { Field, MockForm, SelectField, TextAreaField } from "@/components/mock-form";
+import { Field, LeadSourceField, MockForm, SelectField, TextAreaField } from "@/components/mock-form";
 import { PageHero } from "@/components/page-hero";
 
 export default function ContractorSignupPage() {
@@ -15,10 +15,11 @@ export default function ContractorSignupPage() {
             <Field label="Home ZIP code" name="zip" placeholder="72034" />
             <div className="form-divider" />
             <div className="form-section-title"><span>2</span><div><h2>Your work</h2><p>Help us send opportunities that fit.</p></div></div>
-            <SelectField label="How would you describe your work?" name="role"><option>Licensed contractor</option><option>Handyman / small repair pro</option><option>Skilled tradesperson</option><option>General labor / helper</option><option>Crew or small company</option></SelectField>
+            <SelectField label="How would you describe your work?" name="role"><option>Licensed contractor</option><option>Handyman / skilled worker</option><option>Drywall specialist</option><option>Painter</option><option>Cleaner</option><option>Hauling / labor help</option></SelectField>
             <TextAreaField label="Primary skills and services" name="skills" placeholder="Drywall, painting, carpentry, rental turns, electrical, plumbing..." />
             <div className="field-row"><SelectField label="Are you licensed?" name="licensed"><option>Yes</option><option>No</option><option>Not required for my work</option></SelectField><SelectField label="Are you insured?" name="insured"><option>Yes</option><option>No</option><option>In progress</option></SelectField></div>
             <TextAreaField label="Tell us a little about your experience" name="experience" placeholder="How long have you worked locally? What kinds of jobs are the best fit?" />
+            <LeadSourceField />
           </MockForm>
           <aside className="form-aside">
             <h3>Why join CARL?</h3>

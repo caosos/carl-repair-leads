@@ -11,6 +11,7 @@ import {
   PaintRoller,
   ShieldCheck,
   Wrench,
+  UserRoundSearch,
 } from "lucide-react";
 
 const services = [
@@ -66,6 +67,17 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="section-heading centered"><span className="eyebrow">Two ways CARL can help</span><h2>Need help—or need work?</h2><p>Choose your side and we’ll point you to the right local connection.</p></div>
+          <div className="lane-groups">
+            <div className="lane-group"><span className="service-icon"><HomeIcon /></span><h3>I need help</h3><p>Tell us what needs to get done in Conway or Central Arkansas.</p><div className="lane-links"><Link href="/post-a-job">Licensed Contractor <ArrowRight /></Link><Link href="/post-a-job">Handyman / Small Repair <ArrowRight /></Link><Link href="/post-a-job">Labor Help Today <ArrowRight /></Link></div></div>
+            <div className="lane-group worker-lane"><span className="service-icon"><UserRoundSearch /></span><h3>I’m looking for work</h3><p>Share your skills or let CARL know you’re available today.</p><div className="lane-links"><Link href="/contractor-signup">Licensed Contractor <ArrowRight /></Link><Link href="/contractor-signup">Handyman / Skilled Worker <ArrowRight /></Link><Link href="/looking-for-work">Looking for Work Today <ArrowRight /></Link></div></div>
+          </div>
+        </div>
+      </section>
+      <section className="section drywall-callout-section"><div className="container drywall-callout"><div><span className="eyebrow">CARL’s first specialty</span><h2>Drywall repair is available first</h2><p>Holes, patches, texture repair, ceiling damage, rental damage, move-out damage, and trade damage from electrical, alarm, HVAC, plumbing, and attic work.</p></div><Link href="/drywall-repair" className="button button-primary button-large">Send photos for a drywall quote <ArrowRight size={19} /></Link></div></section>
 
       <section className="section">
         <div className="container">
