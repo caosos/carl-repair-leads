@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ImageGallery } from "@/components/image-gallery";
 import {
   ArrowRight,
   CheckCircle2,
@@ -78,6 +79,8 @@ export default function Home() {
         </div>
       </section>
       <section className="section drywall-callout-section"><div className="container drywall-callout"><div><span className="eyebrow">CARL’s first specialty</span><h2>Drywall repair is available first</h2><p>Holes, patches, texture repair, ceiling damage, rental damage, move-out damage, and trade damage from electrical, alarm, HVAC, plumbing, and attic work.</p></div><Link href="/drywall-repair" className="button button-primary button-large">Send photos for a drywall quote <ArrowRight size={19} /></Link></div></section>
+
+      <ImageGallery />
 
       <section className="section">
         <div className="container">

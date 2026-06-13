@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ImageGallery } from "@/components/image-gallery";
 import { ArrowRight, Check, CircleDot, Clock3, Home, MapPin, Paintbrush } from "lucide-react";
 
 const repairs = ["Holes in walls", "Ceiling patches", "Texture matching", "Cracks", "Rental damage", "Move-out damage", "Damage from electricians, alarm installers, HVAC, plumbing, and attic work"];
@@ -38,6 +39,7 @@ export default function DrywallRepairPage() {
           </div>
         </div>
       </section>
+      <ImageGallery />
       <section className="section soft-section">
         <div className="container">
           <div className="section-heading centered"><span className="eyebrow">Common callouts</span><h2>How did that hole get there?</h2><p>We see the everyday stuff. No long explanation needed.</p></div>
