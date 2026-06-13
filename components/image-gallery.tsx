@@ -3,28 +3,28 @@ import { existsSync, readdirSync } from "node:fs";
 import path from "node:path";
 
 const exampleImages = [
-  { filename: "drywall-hole-example-before.png", label: "Drywall hole — before" },
-  { filename: "drywall-hole-example-after.png", label: "Drywall hole — after" },
-  { filename: "ceiling-foot-through-example-before.png", label: "Ceiling damage — before" },
-  { filename: "ceiling-foot-through-example-after.png", label: "Ceiling damage — after" },
-  { filename: "rental-damage-example-before.png", label: "Rental damage — before" },
-  { filename: "rental-damage-example-after.png", label: "Rental damage — after" },
-  { filename: "drywall-before-after-showcase.png", label: "Drywall repair showcase" },
+  { src: "/images/examples/drywall-hole-example-before.png", label: "Drywall hole — before" },
+  { src: "/images/examples/drywall-hole-example-after.png", label: "Drywall hole — after" },
+  { src: "/images/examples/ceiling-foot-through-example-before.png", label: "Ceiling damage — before" },
+  { src: "/images/examples/ceiling-foot-through-example-after.png", label: "Ceiling damage — after" },
+  { src: "/images/examples/rental-damage-example-before.png", label: "Rental damage — before" },
+  { src: "/images/examples/rental-damage-example-after.png", label: "Rental damage — after" },
+  { src: "/images/examples/drywall-before-after-showcase.png", label: "Drywall repair showcase" },
 ];
 
 const supportedImagePattern = /\.(avif|gif|jpe?g|png|webp)$/i;
 
-function publicImageExists(folder: string, filename: string) {
-  return existsSync(path.join(process.cwd(), "public", "images", folder, filename));
+function publicImageExists(src: string) {
+  return existsSync(path.join(process.cwd(), "public", src.replace(/^\//, "")));
 }
 
-function ImageCard({ folder, filename, label }: { folder: string; filename: string; label: string }) {
-  const exists = publicImageExists(folder, filename);
+function ImageCard({ src, label }: { src: string; label: string }) {
+  const exists = publicImageExists(src);
 
   return (
     <figure className={`gallery-card${exists ? "" : " gallery-placeholder"}`}>
       {exists ? (
-        <img src={`/images/${folder}/${encodeURIComponent(filename)}`} alt={label} loading="lazy" />
+        <img src={src} alt={label} loading="lazy" />
       ) : (
         <div className="gallery-placeholder-art" aria-label={`${label} image coming soon`}>
           <ImageOff aria-hidden="true" />
@@ -52,7 +52,7 @@ export function ImageGallery() {
             <p>Common repair situations and the kind of finished result CARL works toward.</p>
           </div>
           <div className="image-gallery-grid">
-            {exampleImages.map((image) => <ImageCard key={image.filename} folder="examples" {...image} />)}
+            {exampleImages.map((image) => <ImageCard key={image.src} {...image} />)}
           </div>
         </div>
 
@@ -67,8 +67,7 @@ export function ImageGallery() {
               {localImages.map((filename) => (
                 <ImageCard
                   key={filename}
-                  folder="local-work"
-                  filename={filename}
+                  src={`/images/local-work/${encodeURIComponent(filename)}`}
                   label={filename.replace(/[-_]+/g, " ").replace(/\.[^.]+$/, "")}
                 />
               ))}
