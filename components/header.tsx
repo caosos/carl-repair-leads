@@ -25,13 +25,15 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Link className="button button-small button-primary mobile-cta" href="/post-a-job">Get repair help</Link>
-          <Link className="button button-small button-primary mobile-cta" href="/looking-for-work">Find work today</Link>
+          <div className="header-actions">
+            <Link className="button button-small button-primary" href="/post-a-job" onClick={() => setOpen(false)}>
+              Get repair help
+            </Link>
+            <Link className="button button-small button-primary" href="/looking-for-work" onClick={() => setOpen(false)}>
+              Find work today
+            </Link>
+          </div>
         </nav>
-        <div className="header-actions desktop-cta">
-          <Link className="button button-small button-primary" href="/post-a-job">Get repair help</Link>
-          <Link className="button button-small button-primary" href="/looking-for-work">Find work today</Link>
-        </div>
         <button
           className="menu-button"
           onClick={() => setOpen(!open)}
